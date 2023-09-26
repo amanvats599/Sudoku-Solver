@@ -58,7 +58,10 @@ td{
 }
     
 .padd{
-    padding-bottom: 10px;
+    padding-bottom: 1px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 45px;
 }
 
 #clear-button{

@@ -75,12 +75,14 @@
     var validNum = /[1-9]/;
     var tds = document.getElementsByTagName("td");
     for (var i = 0; i < tds.length; i++) {
+      // console.log(tds[i].innerText[0]);
       if (validNum.test(tds[i].innerText[0])) {
         string += tds[i].innerText;
       } else {
         string += "-";
       }
     }
+
     return string;
   }
 
@@ -96,5 +98,6 @@
       }
     }
   }
+  
 </script>
 </html>

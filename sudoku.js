@@ -14,7 +14,7 @@ var SudokuSolver = function (testable) {
   function solve(boardString) {
     var boardArray = boardString.split("");
     if (boardIsInvalid(boardArray)) {
-      return false;
+       return false;
     }
     return recursiveSolve(boardString);
   }
@@ -62,7 +62,8 @@ var SudokuSolver = function (testable) {
   }
 
   function getNextCellAndPossibilities(boardArray) {
-    for (var i = 0; i < boardArray.length; i++) {
+    for (var i = 0; i < boardArray.length; i++) 
+    {
       if (boardArray[i] === "-") {
         var existingValues = getAllIntersections(boardArray, i);
         var choices = ["1", "2", "3", "4", "5", "6", "7", "8", "9"].filter(function (num) {
@@ -114,7 +115,7 @@ var SudokuSolver = function (testable) {
   }
 
   function getBox(boardArray, i) {
-    var boxCol = Math.floor(i / 3) % 3;
+    var boxCol = Math.floor(i / 3) % 3; 
     var boxRow = Math.floor(i / 27);
     var startingIndex = boxCol * 3 + boxRow * 27;
     return [0, 1, 2, 9, 10, 11, 18, 19, 20].map(function (num) {
@@ -169,3 +170,17 @@ var SudokuSolver = function (testable) {
 
   return solver;
 }(TESTABLE);
+
+/*
+
+5 3 _ 6 7 8 9 _ 2
+6 7 2 1 9 5 3 4 8
+_ 9 8 3 4 2 5 6 7
+8 5 9 7 6 1 4 2 3
+4 2 6 8 5 3 7 9 1
+7 1 3 9 _ 4 8 5 6
+9 6 _ 5 3 7 2 8 4
+2 8 7 4 1 9 6 3 5
+3 4 5 2 8 6 1 7 4
+
+*/
